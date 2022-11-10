@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Result from "../../components/result/Result";
+import Counter from "../../components/counter/Counter";
 
 
 function All() {
@@ -35,6 +36,7 @@ function All() {
 
     return <>
         <h1>All page</h1>
+        <Counter/>
 
         {list.map((item, i) => <Result
             key={i}
