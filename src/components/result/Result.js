@@ -7,6 +7,7 @@ function Result(props) {
         <span>{props.url}</span>
         <h4><Link to='/videos'>{props.title}</Link></h4>
         <p>{props.summary}</p>
+        <button onClick={props.remove}>Eliminar</button>
     </div>
 
 }
