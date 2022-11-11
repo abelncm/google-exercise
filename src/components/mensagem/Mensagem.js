@@ -1,13 +1,23 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Mensagem(){
 
-    const [mensagem, setMensagem] = useState("")
+    const input = useRef();
+    const [message, setMessage] = useState('');
+
+    useEffect(()=>{
+        console.log('Component Refreshed');
+        return()=> console.log('Component Removed');
+    });
+
+    function updateMsg(){
+        setMessage(input.current.value);
+    }
 
     return (
         <div>
-            <input type="text" value={mensagem} onChange={(e) => setMensagem(e.target.value)}/>
-            <span>{mensagem}</span>
+            <input ref={input} type="text" onChange={updateMsg}/>
+            <span>{message}</span>
         </div>
     )
 }

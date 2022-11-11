@@ -30,6 +30,7 @@ function All() {
 
     const removeFromList = i => {
         list.splice(i, 1);
+        console.log(list);
         const newList = [...list];
         setList(newList);
     }
