@@ -11,7 +11,7 @@ function Calculator(){
         let total;
         if(operacao == "+"){
             total = parseFloat(num1) + parseFloat(num2)
-
+  
         } else if(operacao == "-"){
             total = parseFloat(num1) - parseFloat(num2)
 

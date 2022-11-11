@@ -13,19 +13,29 @@ function TodoList() {
 
         setTasks([...tasks]);
 
-        input.current.value='';
+        input.current.value = '';
+    }
+    const del = i => {
+        tasks.splice(i, 1);
+        console.log(tasks);
+        const newTask = [...tasks];
+        setTasks(newTask);
     }
 
     return <>
         <h1>Todo Component</h1>
-        
-        <input ref={input} type='text' placeholder="Write task"/>
 
-        <button onClick={add}>Add</button>
+        <input ref={input} type='text' placeholder="Write task" />
+
+        <button onClick={add}>Acicionar ghfhgfhgf</button>
 
         <ul>
-            {tasks.map((task,i)=>
-                <li key={i}>{task} <button>Eliminar</button></li>
+            {tasks.map((task, i) =>
+                <li key={i}>
+                    {task} 
+                    <button onClick={(e)=>del(i)}>Delete</button>
+                </li>
+
             )}
         </ul>
     </>
