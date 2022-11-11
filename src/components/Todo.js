@@ -25,7 +25,7 @@ function TodoList() {
 
         <ul>
             {tasks.map((task,i)=>
-                <li key={i}>{task}</li>
+                <li key={i}>{task} <button>Eliminar</button></li>
             )}
         </ul>
     </>
