@@ -15,6 +15,7 @@ function TodoList() {
 
         input.current.value = '';
     }
+
     const del = i => {
         tasks.splice(i, 1);
         console.log(tasks);

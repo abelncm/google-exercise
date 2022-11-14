@@ -1,35 +1,62 @@
 import { useState } from "react";
+import './ObjectPagination.css';
 
-function ObjectPagination(){
 
-    const list = ['A', 'B', 'C', 'D'];
-    const [text, setText] = useState(list[0]);
-    let [currentPosition, setPos] = useState(0);
+function ObjectPagination() {
 
-    function next() {
-        if(currentPosition < list.length-1){
-            const nextPos = currentPosition+1;
-            setPos(nextPos);
-            setText(list[nextPos]);            
-        } else {
-            alert('Highest Limit reached!');
-        }  
-    }
+    const list = [
+        {
+            name: " Kevine",
+            bio: "Naruto Shipuden",
+            age: "25",
+        },
+        {
+            name: " Abel",
+            bio: "O disportista",
+            age: "25",
+        },
+        {
+            name: " Susana",
+            bio: "Escritora",
+            age: "33",
+        },
+        {
+            name: " Luiz",
+            bio: "professor",
+            age: "43",
+        },
+        {
+            name: " Joao",
+            bio: "Medico",
+            age: "39",
+        },
+    ];
 
-    function previous() {
-        if(currentPosition > 0) {
-            const prevPos = currentPosition-1;
-            setPos(prevPos);
-            setText(list[prevPos]);
-        } else {
-            alert('Lowest limit reached!');
-        }
-    }
+    let [pos, setPos] = useState(0);
+
 
     return <>
-        <button onClick={previous}>Previous</button>
-        <b>{text}</b>
-        <button onClick={next}>Next</button>
+
+        <div className="top-menu">
+
+            {list.map((person, i) =>
+                <div key={i}>{person.name}</div>
+            )}
+
+        </div>
+
+        <div className="display-info">
+
+            <button>Previous</button>
+            <div>
+                Name: {list[pos].name} <br />
+                Age: {list[pos].age} <br />
+                Bio: {list[pos].bio} <br />
+            </div>
+            <button>Next</button>
+
+        </div>
+
     </>
 
 }
