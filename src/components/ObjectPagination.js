@@ -47,8 +47,12 @@ function ObjectPagination() {
         if(pos > 0){
             setPos(pos-1); 
         } else {
-            alert('Highest Limit reached!')
+            alert('Lowest Limit reached!')
         }
+    }
+
+    function isSelected(i) {
+        return i==pos?'selected':'';
     }
 
     return <>
@@ -56,14 +60,17 @@ function ObjectPagination() {
         <div className="top-menu">
 
             {list.map((person, i) =>
-                <div key={i}>{person.name}</div>
+                <div className={isSelected(i)} key={i} onClick={(e)=>setPos(i)}>
+                    {person.name}
+                </div>
             )}
 
         </div>
 
-        <div className="display-info">
+        <div>Valor do pos: {pos}</div>
 
-            <button>Previous</button>
+        <div className="display-info">
+            <button onClick={previous}>Previous</button>
             
             <div className="main">
                 Name: {list[pos].name} <br />
