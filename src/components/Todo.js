@@ -27,7 +27,7 @@ function TodoList() {
 
         <input ref={input} type='text' placeholder="Write task" />
 
-        <button onClick={add}>Acicionar ghfhgfhgf</button>
+        <button onClick={add}>Acicionar</button>
 
         <ul>
             {tasks.map((task, i) =>

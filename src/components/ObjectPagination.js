@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Pagination2(){
+function ObjectPagination(){
 
     const list = ['A', 'B', 'C', 'D'];
     const [text, setText] = useState(list[0]);
@@ -34,4 +34,4 @@ function Pagination2(){
 
 }
 
-export default Pagination2;
+export default ObjectPagination;

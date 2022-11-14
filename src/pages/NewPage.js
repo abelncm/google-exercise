@@ -1,5 +1,6 @@
 import HelloWorld from "../components/HelloWorld";
 import HelloWorld2 from "../components/HelloWorld2";
+import ObjectPagination from "../components/ObjectPagination";
 import Pagination2 from "../components/Pagination2";
 
 
@@ -15,6 +16,9 @@ function NewPage() {
         <br/>
         <br/>
         <Pagination2 />
+        <br/>
+        <br/>
+        <ObjectPagination />
 
     </>
 }
