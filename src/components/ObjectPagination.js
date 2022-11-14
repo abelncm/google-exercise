@@ -33,7 +33,23 @@ function ObjectPagination() {
     ];
 
     let [pos, setPos] = useState(0);
+    
 
+    function next() {
+        if(pos < list.length-1){
+            setPos(pos+1);
+        } else {
+            alert('Highest Limit reached!')
+        }
+    }
+
+    function previous() {
+        if(pos > 0){
+            setPos(pos-1); 
+        } else {
+            alert('Highest Limit reached!')
+        }
+    }
 
     return <>
 
@@ -48,12 +64,14 @@ function ObjectPagination() {
         <div className="display-info">
 
             <button>Previous</button>
-            <div>
+            
+            <div className="main">
                 Name: {list[pos].name} <br />
                 Age: {list[pos].age} <br />
                 Bio: {list[pos].bio} <br />
             </div>
-            <button>Next</button>
+
+            <button onClick={next}>Next</button>
 
         </div>
 
