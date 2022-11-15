@@ -57,6 +57,13 @@ function PhoneBook() {
         setResultActive(false);
     }
 
+    function editContact(i) {
+        const contact = phoneBookList[i];
+        nameRef.current.value = contact.name;
+        phoneRef.current.value = contact.phone;
+        removeContact(i);
+    }
+
     function removeContact(i) {
         phoneBookList.splice(i, 1);
         setPhoneBookList([...phoneBookList]);
@@ -95,6 +102,7 @@ function PhoneBook() {
                 <div key={i} className="contact-item">
                     Name: {contact.name}<br/>
                     Phone: {contact.phone}
+                    <button onClick={()=>editContact(i)}>Edit</button>
                     <button onClick={()=>removeContact(i)}>Delete</button>
                 </div>
             )}
