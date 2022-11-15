@@ -17,6 +17,13 @@ function PhoneBook() {
         const name = nameRef.current.value;
         const phone = phoneRef.current.value;
 
+        const foundContact = phoneBookList.find(contact => contact.name==name);
+
+        if(foundContact!=undefined) {
+            alert('Contact with name '+name+ ' is already in the contact list.');
+            return;
+        }
+
         const newContact = {
             name: name,
             phone: phone
