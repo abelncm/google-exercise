@@ -26,7 +26,8 @@ function PhoneBook() {
 
         const newContact = {
             name: name,
-            phone: phone
+            phone: phone,
+            createdAt: new Date()
         }
 
         phoneBookList.push(newContact);
@@ -101,7 +102,8 @@ function PhoneBook() {
             {phoneBookList.map((contact, i)=>
                 <div key={i} className="contact-item">
                     Name: {contact.name}<br/>
-                    Phone: {contact.phone}
+                    Phone: {contact.phone}<br/>
+                    Created at: {contact.createdAt.toLocaleString()}<br/>
                     <button onClick={()=>editContact(i)}>Edit</button>
                     <button onClick={()=>removeContact(i)}>Delete</button>
                 </div>
