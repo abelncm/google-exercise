@@ -9,7 +9,8 @@ function PhoneBook() {
     const searchRef = useRef();
     const [phoneBookList, setPhoneBookList] = useState([]);
     const [searchResult, setSearchResult] = useState([]);
-    console.log(phoneBookList);
+    const [resultActive, setResultActive] = useState(false);
+    // console.log(phoneBookList);
 
 
     function add() {
@@ -40,16 +41,26 @@ function PhoneBook() {
             }
         }
         setSearchResult(results);
+        setResultActive(true);
     }
 
     function clearSearch() {
         searchRef.current.value=null;
         setSearchResult([]);
+        setResultActive(false);
     }
 
     function removeContact(i) {
         phoneBookList.splice(i, 1);
         setPhoneBookList([...phoneBookList]);
+    }
+
+    function resultMessage() {
+        if(resultActive && searchResult.length>0) {
+            return searchResult.length + 'results found!';
+        } else if (resultActive && searchResult.length==0) {
+            return 'No results found!';
+        }
     }
 
     return <div className="wrapper">
@@ -69,6 +80,10 @@ function PhoneBook() {
             </div>
 
             <h4>My contact list:</h4>
+
+            {phoneBookList.length==0 && 
+                <span>No contact in your phonebook!</span>}
+
             {phoneBookList.map((contact, i)=>
                 <div key={i} className="contact-item">
                     Name: {contact.name}<br/>
@@ -84,6 +99,16 @@ function PhoneBook() {
             <button onClick={clearSearch}>Clear</button>
 
             <h4>Search result:</h4>
+            
+            {resultActive && searchResult.length>0 && <span>
+                {searchResult.length} results found!
+            </span>}
+
+            {resultActive && searchResult.length==0 && <span>
+                No results found!
+            </span>}
+
+            {/* <span>{resultMessage()}</span> */}
 
             {searchResult.map((contact, i)=>
                 <div key={i} className="contact-item">
