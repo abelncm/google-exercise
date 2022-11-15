@@ -26,6 +26,8 @@ function PhoneBook() {
         console.log(phoneBookList);
 
         setPhoneBookList([...phoneBookList]);
+        nameRef.current.value=null;
+        phoneRef.current.value=null;
     }
 
     function search() {
@@ -33,15 +35,21 @@ function PhoneBook() {
         const searchValue = searchRef.current.value;
         
         for (let contact of phoneBookList) {
-            if(contact.name == searchValue) {
+            if(contact.name.toLowerCase().includes(searchValue.toLowerCase())) {
                 results.push(contact);
             }
         }
         setSearchResult(results);
     }
 
-    function clear() {
-        
+    function clearSearch() {
+        searchRef.current.value=null;
+        setSearchResult([]);
+    }
+
+    function removeContact(i) {
+        phoneBookList.splice(i, 1);
+        setPhoneBookList([...phoneBookList]);
     }
 
     return <div className="wrapper">
@@ -65,6 +73,7 @@ function PhoneBook() {
                 <div key={i} className="contact-item">
                     Name: {contact.name}<br/>
                     Phone: {contact.phone}
+                    <button onClick={()=>removeContact(i)}>Delete</button>
                 </div>
             )}
         </div>
@@ -72,7 +81,7 @@ function PhoneBook() {
         <div className="right">
             <input ref={searchRef} type="text" />
             <button onClick={search}>Search</button>
-            <button onClick={clear}>Clear</button>
+            <button onClick={clearSearch}>Clear</button>
 
             <h4>Search result:</h4>
 
