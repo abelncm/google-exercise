@@ -31,6 +31,8 @@ function PhoneBook() {
         }
 
         phoneBookList.push(newContact);
+        phoneBookList.sort((a,b) => 
+            a.name.toLowerCase()>b.name.toLowerCase()?1:-1);
 
         console.log(phoneBookList);
 
