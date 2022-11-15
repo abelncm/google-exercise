@@ -4,3 +4,12 @@
     padding: 10px;
     border-radius: 5px
 }
+
+.wrapper {
+    display: flex;
+    gap: 100px
+}
+
+.left, .right {
+    width: 50%
+}
