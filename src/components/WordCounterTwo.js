@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 
 
-export default function WordCounter() {
+export default function WordCounterTwofor() {
 
     const [numChars, setNumChars] = useState(0);
     const [numWords, setNumWords] = useState(0);
@@ -25,10 +25,15 @@ export default function WordCounter() {
         const wordToFind = findWordRef.current.value;
 
         const words = text.split(' ');
-        const repeated = words.filter(word => word == wordToFind);
-        const repeatedNum = repeated.length;
+        let counter = 0;
         
-        setWordRepeated(repeatedNum);
+        for(let word of words){
+            if(word == wordToFind) {
+                counter++;
+            }
+        }
+        
+        setWordRepeated(counter);
     }
 
     return <>

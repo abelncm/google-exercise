@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Clock from "../components/Clock";
 import Table from '../components/Table'
 import WordCounter from "../components/WordCounter";
+import WordCounterTwo from "../components/WordCounterTwo";
 
 function TablePage() {
 
@@ -34,16 +35,19 @@ function TablePage() {
     ]);
 
     function remove(pos) {
-        listOfPersons.splice(pos,1);
+        listOfPersons.splice(pos, 1);
         setListOfPersons([...listOfPersons]);
     }
 
     return <>
         <h1>My table page</h1>
         <Clock />
-        <Table list={listOfPersons} rm={remove}/>
-        <br/>
+        <Table list={listOfPersons} rm={remove} />
+        <br />
         <WordCounter />
+        <br />
+        <br />
+        <WordCounterTwo />
     </>
 }
 
