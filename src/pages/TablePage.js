@@ -1,9 +1,10 @@
+import { useState } from "react";
 import Table from "../components/Table";
 
 
 function TablePage() {
 
-    const listOfPersons = [
+    const [listOfPersons, setListOfPersons] = useState([
         {
             "firstName": "Bruno",
             "lastName": "Cardoso",
@@ -29,12 +30,17 @@ function TablePage() {
             "lastName": "Sanches",
             "gender": "Female",
         }
-    ];
+    ]);
+
+    function remove(pos) {
+        listOfPersons.splice(pos,1);
+        setListOfPersons([...listOfPersons]);
+    }
 
     return <>
         <h1>My table page</h1>
 
-        <Table list={listOfPersons}/>
+        <Table list={listOfPersons} rm={remove}/>
 
     </>
 }

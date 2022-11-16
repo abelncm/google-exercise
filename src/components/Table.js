@@ -2,12 +2,15 @@
 function Table(props) {
 
 
-    return <table>
+    return <table border="1">
 
         <thead>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Gender Name</th>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Gender Name</th>
+                <th></th>
+            </tr>
         </thead>
         <tbody>
             {props.list.map((person, i) =>
@@ -15,6 +18,9 @@ function Table(props) {
                     <td>{person.firstName}</td>
                     <td>{person.lastName}</td>
                     <td>{person.gender}</td>
+                    <td>
+                        <button onClick={()=>props.rm(i)}>Remove</button>
+                    </td>
                 </tr>
             )}
         </tbody>
