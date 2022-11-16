@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Clock from "../components/Clock";
 import Table from "../components/Table";
 
 
@@ -6,29 +7,29 @@ function TablePage() {
 
     const [listOfPersons, setListOfPersons] = useState([
         {
-            "firstName": "Bruno",
-            "lastName": "Cardoso",
-            "gender": "Male",
+            firstName: "Bruno",
+            lastName: "Cardoso",
+            gender: "Male",
         },
         {
-            "firstName": "Joana",
-            "lastName": "Fernandes",
-            "gender": "Female",
+            firstName: "Joana",
+            lastName: "Fernandes",
+            gender: "Female",
         },
         {
-            "firstName": "Pedro",
-            "lastName": "Garcia",
-            "gender": "Male",
+            firstName: "Pedro",
+            lastName: "Garcia",
+            gender: "Male",
         },
         {
-            "firstName": "Ilda",
-            "lastName": "Barbosa",
-            "gender": "Fenale",
+            firstName: "Ilda",
+            lastName: "Barbosa",
+            gender: "Fenale",
         },
         {
-            "firstName": "Mira",
-            "lastName": "Sanches",
-            "gender": "Female",
+            firstName: "Mira",
+            lastName: "Sanches",
+            gender: "Female",
         }
     ]);
 
@@ -39,7 +40,7 @@ function TablePage() {
 
     return <>
         <h1>My table page</h1>
-
+        <Clock />
         <Table list={listOfPersons} rm={remove}/>
 
     </>
