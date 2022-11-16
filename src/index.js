@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import CounterPage from './pages/counter/CounterPage';
 import NewPage from './pages/NewPage';
 import ContactPage from './pages/ContactPage';
+import TablePage from './pages/TablePage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -24,6 +25,7 @@ root.render(
           <Route path="counter" element={<CounterPage />} />
           <Route path="new-page" element={<NewPage />} />
           <Route path="contact-page" element={<ContactPage />} />
+          <Route path="table" element={<TablePage />} />
         </Route>
       </Routes>
     </BrowserRouter>
