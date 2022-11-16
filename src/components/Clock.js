@@ -8,7 +8,6 @@ export default function Clock() {
 
         const intv = setInterval(()=>{
             const time = (new Date()).toLocaleTimeString();
-            console.log(time);
             setTime(time);
         }, 1000);
 

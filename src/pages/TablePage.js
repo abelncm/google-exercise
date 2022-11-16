@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Clock from "../components/Clock";
-import Table from "../components/Table";
-
+import Table from '../components/Table'
+import WordCounter from "../components/WordCounter";
 
 function TablePage() {
 
@@ -42,7 +42,8 @@ function TablePage() {
         <h1>My table page</h1>
         <Clock />
         <Table list={listOfPersons} rm={remove}/>
-
+        <br/>
+        <WordCounter />
     </>
 }
 
