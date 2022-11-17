@@ -1,15 +1,15 @@
 
-.suggestion-box {
+.suggestionBox {
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.188);
     width: 200px
     
 }
-.suggestion-box .item {
+.suggestionBox .item {
     border-bottom: 1px solid #ccc;
     padding: 5px 10px
 }
-.suggestion-box .item:last-child {
+.suggestionBox .item:last-child {
     border: 0
 }

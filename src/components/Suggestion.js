@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import './Suggestion.css';
+import styles from './Suggestion.module.css';
 
 export default function Suggestion() {
 
@@ -36,9 +36,9 @@ export default function Suggestion() {
         </ul>
         <input type="text" onChange={searchFruit} placeholder="Search for fruit" />
         
-        {suggestions.length>0 && <div className="suggestion-box">
+        {suggestions.length>0 && <div className={styles.suggestionBox}>
             {suggestions.map((suggestion, i) =>
-                <div key={i} className="item">{suggestion}</div>
+                <div key={i} className={styles.item}>{suggestion}</div>
             )}
         </div>}
     </>

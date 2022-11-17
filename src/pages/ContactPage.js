@@ -1,11 +1,15 @@
 import PhoneBook from "../components/phoneBook/PhoneBook";
+import MyTitle from "../components/styled/MyTitle";
+import StyledButton from "../components/styled/StyledButton";
 
 
 function ContactPage() {
 
     return <>
-        <h1>This is my contact page</h1>
+        <MyTitle>This is my contact page</MyTitle>
         <PhoneBook />
+        <StyledButton>Another button</StyledButton>
+
     </>
 }
 
