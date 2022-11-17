@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Clock from "../components/Clock";
+import Suggestion from "../components/Suggestion";
 import Table from '../components/Table'
 import WordCounter from "../components/WordCounter";
 import WordCounterTwo from "../components/WordCounterTwo";
@@ -48,6 +49,10 @@ function TablePage() {
         <br />
         <br />
         <WordCounterTwo />
+        <br />
+        <br />
+        <hr />
+        <Suggestion />
     </>
 }
 
